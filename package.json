@@ -1,0 +1,27 @@
+{
+  "name": "coffeemasters",
+  "version": "1.0.0",
+  "description": "Coffee Shop Single Page Application written entirely in Vanilla JavaScript",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Archer-01/coffeemasters.git"
+  },
+  "keywords": [
+    "vanilla-js",
+    "coffee-shop",
+    "single-page-application",
+    "router",
+    "web-components",
+    "reactive-programming"
+  ],
+  "author": "Hamza Haddani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Archer-01/coffeemasters/issues"
+  },
+  "homepage": "https://github.com/Archer-01/coffeemasters#readme"
+}
