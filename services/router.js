@@ -28,8 +28,7 @@ const Router = {
 
 		switch (path) {
 			case '/':
-				content = document.createElement('h1')
-				content.textContent = 'Home Page'
+				content = document.createElement('menu-page')
 				break
 			case '/order':
 				content = document.createElement('h1')
