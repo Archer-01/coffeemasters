@@ -4,6 +4,7 @@ import Router from './services/router.js'
 
 // NOTE: These imports are necessary to register the components
 import MenuPage from './components/MenuPage.js'
+import ProductCategory from './components/ProductCategory.js'
 
 window.app = {
 	store,

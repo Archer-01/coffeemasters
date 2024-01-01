@@ -18,6 +18,17 @@ class MenuPage extends HTMLElement {
 		const template = document.getElementById('menu-page-template')
 		const instance = template.content.cloneNode(true)
 		this.root.appendChild(instance)
+		this.render()
+	}
+
+	render() {
+		const list = this.root.getElementById('menu')
+
+		for (const category of app.store.menu) {
+			const item = document.createElement('product-category')
+			item.dataset.category = JSON.stringify(category)
+			list.appendChild(item)
+		}
 	}
 }
 
