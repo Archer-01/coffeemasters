@@ -14,8 +14,8 @@ class ProductCategory extends HTMLElement {
 
 		const list = instance.querySelector('ul.category')
 		for (const product of products) {
-			const item = document.createElement('li')
-			item.textContent = product.name
+			const item = document.createElement('product-item')
+			item.dataset.product = JSON.stringify(product)
 			list.appendChild(item)
 		}
 
