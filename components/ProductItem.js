@@ -17,8 +17,7 @@ class ProductItem extends HTMLElement {
 			event.preventDefault()
 
 			if (event.target.tagName.toLowerCase() === 'button') {
-				// Add to cart
-				console.log('Add to cart')
+				app.store.addToCart({ id, name, price })
 			} else {
 				app.router.go(`/product/${id}`)
 			}
