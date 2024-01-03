@@ -6,6 +6,7 @@ import Router from './services/router.js'
 import MenuPage from './components/MenuPage.js'
 import ProductCategory from './components/ProductCategory.js'
 import ProductItem from './components/ProductItem.js'
+import DetailsPage from './components/DetailsPage.js'
 
 window.app = {
 	store,
@@ -13,6 +14,6 @@ window.app = {
 }
 
 window.addEventListener('DOMContentLoaded', async () => {
-	app.store.menu = await API.loadMenu()
+	await API.loadMenu()
 	app.router.init()
 })

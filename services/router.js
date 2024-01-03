@@ -36,9 +36,9 @@ const Router = {
 				break
 			default:
 				if (path.startsWith('/product/')) {
-					content = document.createElement('h1')
+					content = document.createElement('details-page')
 					const productId = path.split('/')[2]
-					content.textContent = `Product no.${productId}`
+					content.dataset.id = productId
 				}
 				break
 		}
