@@ -7,6 +7,7 @@ import MenuPage from './components/MenuPage.js'
 import ProductCategory from './components/ProductCategory.js'
 import ProductItem from './components/ProductItem.js'
 import DetailsPage from './components/DetailsPage.js'
+import OrderPage from './components/OrderPage.js'
 
 window.app = {
 	store,

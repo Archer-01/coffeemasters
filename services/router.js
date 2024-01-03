@@ -31,8 +31,7 @@ const Router = {
 				content = document.createElement('menu-page')
 				break
 			case '/order':
-				content = document.createElement('h1')
-				content.textContent = 'Order Page'
+				content = document.createElement('order-page')
 				break
 			default:
 				if (path.startsWith('/product/')) {
