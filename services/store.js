@@ -10,6 +10,8 @@ const store = {
 		} else {
 			app.store.cart = [...app.store.cart, { ...product, quantity: 1 }]
 		}
+
+		window.dispatchEvent(new Event('CartChange'))
 	},
 	removeFromCart(targetId) {
 		app.store.cart = store.cart.filter((item) => item.id !== targetId)

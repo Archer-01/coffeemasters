@@ -18,3 +18,14 @@ window.addEventListener('DOMContentLoaded', async () => {
 	await API.loadMenu()
 	app.router.init()
 })
+
+window.addEventListener('CartChange', function () {
+	const badge = document.getElementById('badge')
+	const quantity = app.store.cart.reduce(
+		(acc, item) => acc + item.quantity,
+		0,
+	)
+
+	badge.textContent = quantity
+	badge.hidden = quantity === 0
+})

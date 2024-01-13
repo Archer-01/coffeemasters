@@ -4,9 +4,7 @@ class ProductItem extends HTMLElement {
 	}
 
 	connectedCallback() {
-		const { id, name, price, description, image } = JSON.parse(
-			this.dataset.product,
-		)
+		const { id, name, price, image } = JSON.parse(this.dataset.product)
 
 		const template = document.getElementById('product-item-template')
 		const instance = template.content.cloneNode(true)

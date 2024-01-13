@@ -27,6 +27,13 @@ class DetailsPage extends HTMLElement {
 			product.description
 		instance.querySelector('p.price').textContent =
 			`$${product.price.toFixed(2)}`
+		instance.querySelector('button').addEventListener('click', function () {
+			app.store.addToCart({
+				id: product.id,
+				name: product.name,
+				price: product.price,
+			})
+		})
 
 		this.root.appendChild(instance)
 	}
