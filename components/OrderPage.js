@@ -43,6 +43,21 @@ class OrderPage extends HTMLElement {
 				orderItem.dataset.item = JSON.stringify(item)
 				itemsList.appendChild(orderItem)
 			})
+
+			// Create total list item
+			{
+				const total = app.store.cart.reduce(
+					(acc, item) => acc + item.quantity * item.price,
+					0,
+				)
+
+				const template = document.getElementById('total-order-template')
+				const instance = template.content.cloneNode(true)
+				instance.querySelector('p.price-total').textContent =
+					`$${total.toFixed(2)}`
+
+				itemsList.appendChild(instance)
+			}
 		}
 	}
 }
