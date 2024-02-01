@@ -1,4 +1,10 @@
 class OrderPage extends HTMLElement {
+	#user = {
+		name: '',
+		phone: '',
+		email: '',
+	}
+
 	constructor() {
 		super()
 		this.root = this.attachShadow({ mode: 'open' })
@@ -57,6 +63,38 @@ class OrderPage extends HTMLElement {
 					`$${total.toFixed(2)}`
 
 				itemsList.appendChild(instance)
+			}
+
+			// Create form
+			{
+				const template = document.getElementById('order-form-template')
+				const instance = template.content.cloneNode(true)
+				section.appendChild(instance)
+
+				const form = section.querySelector('form')
+
+				form.addEventListener('submit', (event) => {
+					event.preventDefault()
+					window.alert(`Thanks for your order ${this.#user.name}`)
+					this.#user.name = ''
+					this.#user.phone = ''
+					this.#user.email = ''
+					// TODO: Send order to server
+				})
+
+				this.#user = new Proxy(this.#user, {
+					set(target, property, value) {
+						target[property] = value
+						form.elements[property].value = value
+						return true
+					},
+				})
+
+				Array.from(form.elements).forEach((element) => {
+					element.addEventListener('change', (event) => {
+						this.#user[event.target.name] = event.target.value
+					})
+				})
 			}
 		}
 	}
