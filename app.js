@@ -8,6 +8,7 @@ import ProductCategory from './components/ProductCategory.js'
 import ProductItem from './components/ProductItem.js'
 import DetailsPage from './components/DetailsPage.js'
 import OrderPage from './components/OrderPage.js'
+import OrderItem from './components/OrderItem.js'
 
 window.app = {
 	store,

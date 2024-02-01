@@ -18,4 +18,16 @@ const store = {
 	},
 }
 
-export default store
+const proxiedStore = new Proxy(store, {
+	set(target, property, value) {
+		target[property] = value
+
+		if (property === 'cart') {
+			window.dispatchEvent(new Event('CartChange'))
+		}
+
+		return true
+	},
+})
+
+export default proxiedStore
